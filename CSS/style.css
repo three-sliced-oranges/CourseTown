@@ -1,1 +1,29 @@
+/*Navigation Bar*/
+#navbar {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background-color: #333;
+    width: 1350px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/*Navigation Bar Words/Links*/
+#navbarlist {
+    float: right;
+}
+#navbarlist a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+#navbarlist a:hover {
+    background-color: #555;
+    color: white;    
+}
+a {font-size: 20px;}
+
 
