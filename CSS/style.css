@@ -24,6 +24,11 @@
     background-color: #fc9b55;
     color: black;    
 }
-a {font-size: 20px;}
+a {
+	font-size: 20px;
+}
 
-
+p{
+	font-family: Brushstroke, fantasy;
+	font-size: 30px;
+}
