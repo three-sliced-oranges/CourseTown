@@ -3,6 +3,12 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="../CSS/style.css"/>
 		<script>
+			function submitname() {
+				personal = document.getElementById("personal")
+				name = personal.elements["name"].value;
+				document.getElementById("name").innerHTML = ("Name: " + name)
+
+			}
 			function submitschedule() {
 				schedule = document.getElementById("schedule");
 				p1s = schedule.elements["p1"].value;
@@ -103,6 +109,9 @@
 				</td>
 			</tr>
 			<tr>
+				<td>
+					<p id="name"></p>
+				</td>
 				<td>
 					<p id="yourschedule"></p>
 				</td>
