@@ -51,37 +51,54 @@
 
 		<table width =1200>
 			<tr>
+				<th><h1>Personal</h1></th>
 				<th><h1>Your Schedule</h1></th>
 				<th><h1>Offered</h1></th>
 				<th><h1>Desired</h1></th>
 			</tr>
 			<tr>
 				<td> 
-					<form id="schedule"> 
-					<p> Period 1: <input name="p1" type="text" size="15"> </p>
-					<p> Period 2: <input name="p2" type="text" size="15"> </p>
-					<p> Period 3: <input name="p3" type="text" size="15"> </p>
-					<p> Period 4: <input name="p4" type="text" size="15"> </p>
-					
+					<form id="personal"> 
+						<p> Full Name: <input name="name" type="text" size="15"> </p>
 					</form>
-					<button onclick="submitschedule()"> Submit </button> 
+					
 				</td>
+				<td> 
+					<form id="schedule"> 
+						<p> Period 1: <input name="p1" type="text" size="15"> </p>
+						<p> Period 2: <input name="p2" type="text" size="15"> </p>
+						<p> Period 3: <input name="p3" type="text" size="15"> </p>
+						<p> Period 4: <input name="p4" type="text" size="15"> </p>
+					</form>
+					
 				<td>
 					<form id="offered"> 
-					<p> Period 1: <input name="p1" type="text" size="15"> </p>
-					<p> Period 2: <input name="p2" type="text" size="15"> </p>
-					<p> Period 3: <input name="p3" type="text" size="15"> </p>
-					<p> Period 4: <input name="p4" type="text" size="15"> </p>
-					</form>
-					<button onclick="submitoffered()"> Submit </button> 
+						<p> Period 1: <input name="p1" type="text" size="15"> </p>
+						<p> Period 2: <input name="p2" type="text" size="15"> </p>
+						<p> Period 3: <input name="p3" type="text" size="15"> </p>
+						<p> Period 4: <input name="p4" type="text" size="15"> </p>
+					</form>			
 				</td>
 				<td>
 					<form id="desired"> 
-					<p> Period 1: <input name="p1" type="text" size="15"> </p>
-					<p> Period 2: <input name="p2" type="text" size="15"> </p>
-					<p> Period 3: <input name="p3" type="text" size="15"> </p>
-					<p> Period 4: <input name="p4" type="text" size="15"> </p>
-					</form>
+						<p> Period 1: <input name="p1" type="text" size="15"> </p>
+						<p> Period 2: <input name="p2" type="text" size="15"> </p>
+						<p> Period 3: <input name="p3" type="text" size="15"> </p>
+						<p> Period 4: <input name="p4" type="text" size="15"> </p>
+					</form>		
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button onclick="submitname()"> Submit </button> 
+				</td>
+				<td>
+					<button onclick="submitschedule()"> Submit </button> 
+				</td>
+				<td>
+					<button onclick="submitoffered()"> Submit </button> 
+				</td>
+				<td>
 					<button onclick="submitsdesired()"> Submit </button> 
 				</td>
 			</tr>
