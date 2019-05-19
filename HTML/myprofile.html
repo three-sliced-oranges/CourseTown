@@ -2,6 +2,41 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="../CSS/style.css"/>
+		<script>
+			function submitschedule() {
+				schedule = document.getElementById("schedule");
+				p1s = schedule.elements["p1"].value;
+				p2s = schedule.elements["p2"].value;
+				p3s = schedule.elements["p3"].value;
+				p4s = schedule.elements["p4"].value;
+				document.getElementById("yourschedule").innerHTML = ("Period 1: " + p1s + "<br>")
+				document.getElementById("yourschedule").innerHTML += ("Period 2: " + p2s + "<br>" )
+				document.getElementById("yourschedule").innerHTML += ("Period 3: " + p3s + "<br>")
+				document.getElementById("yourschedule").innerHTML += ("Period 4: " + p4s)
+			}
+			function submitoffered() {
+				schedule = document.getElementById("offered");
+				p1o = offered.elements["p1"].value;
+				p2o = offered.elements["p2"].value;
+				p3o = offered.elements["p3"].value;
+				p4o = offered.elements["p4"].value;
+				document.getElementById("youroffered").innerHTML = ("Period 1: " + p1o + "<br>")
+				document.getElementById("youroffered").innerHTML += ("Period 2: " + p2o + "<br>" )
+				document.getElementById("youroffered").innerHTML += ("Period 3: " + p3o + "<br>")
+				document.getElementById("youroffered").innerHTML += ("Period 4: " + p4o)
+			}
+			function submitsdesired() {
+				schedule = document.getElementById("desired");
+				p1d = desired.elements["p1"].value;
+				p2d = desired.elements["p2"].value;
+				p3d = desired.elements["p3"].value;
+				p4d = desired.elements["p4"].value;
+				document.getElementById("yourdesired").innerHTML = ("Period 1: " + p1d + "<br>")
+				document.getElementById("yourdesired").innerHTML += ("Period 2: " + p2d + "<br>" )
+				document.getElementById("yourdesired").innerHTML += ("Period 3: " + p3d + "<br>")
+				document.getElementById("yourdesired").innerHTML += ("Period 4: " + p4d)
+			}
+		</script>
 	</head>
 	<body>
 		<ul id="navbar">
@@ -12,12 +47,55 @@
 			<li id="navbarlist"><a href="about.html">About</a> </li>
 			<li id="navbarlist"><a href="home.html">Home</a> </li>
 		</ul>
+		
+
 		<table width =1200>
-			<tr><th><h1>Your Schedule</h1></th><th><h1>Offered</h1></th><th><h1>Desired</h1></th></tr>
-			<tr><td><h3>Period 1</h3></td><td><h3>Period 1</h3></td><td><h3>Period 1</h3></td></tr>
-			<tr><td><h3>Period 2</h3></td><td><h3>Period 2</h3></td><td><h3>Period 2</h3></td></tr>
-			<tr><td><h3>Period 3</h3></td><td><h3>Period 3</h3></td><td><h3>Period 3</h3></td></tr>
-			<tr><td><h3>Period 4</h3></td><td><h3>Period 4</h3></td><td><h3>Period 4</h3></td></tr>
+			<tr>
+				<th><h1>Your Schedule</h1></th>
+				<th><h1>Offered</h1></th>
+				<th><h1>Desired</h1></th>
+			</tr>
+			<tr>
+				<td> 
+					<form id="schedule"> 
+					<p> Period 1: <input name="p1" type="text" size="15"> </p>
+					<p> Period 2: <input name="p2" type="text" size="15"> </p>
+					<p> Period 3: <input name="p3" type="text" size="15"> </p>
+					<p> Period 4: <input name="p4" type="text" size="15"> </p>
+					
+					</form>
+					<button onclick="submitschedule()"> Submit </button> 
+				</td>
+				<td>
+					<form id="offered"> 
+					<p> Period 1: <input name="p1" type="text" size="15"> </p>
+					<p> Period 2: <input name="p2" type="text" size="15"> </p>
+					<p> Period 3: <input name="p3" type="text" size="15"> </p>
+					<p> Period 4: <input name="p4" type="text" size="15"> </p>
+					</form>
+					<button onclick="submitoffered()"> Submit </button> 
+				</td>
+				<td>
+					<form id="desired"> 
+					<p> Period 1: <input name="p1" type="text" size="15"> </p>
+					<p> Period 2: <input name="p2" type="text" size="15"> </p>
+					<p> Period 3: <input name="p3" type="text" size="15"> </p>
+					<p> Period 4: <input name="p4" type="text" size="15"> </p>
+					</form>
+					<button onclick="submitsdesired()"> Submit </button> 
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p id="yourschedule"></p>
+				</td>
+				<td>
+					<p id="youroffered"></p>
+				</td>
+				<td>
+					<p id="yourdesired"></p>
+				</td>
+			</tr>	
 		</table>
 	</body>
 </html>
