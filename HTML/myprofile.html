@@ -2,49 +2,9 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="../CSS/style.css"/>
-		<script>
-			function submitname() {
-				personal = document.getElementById("personal")
-				name = personal.elements["name"].value;
-				document.getElementById("name").innerHTML = ("Name: " + name)
-
-			}
-			function submitschedule() {
-				schedule = document.getElementById("schedule");
-				p1s = schedule.elements["p1"].value;
-				p2s = schedule.elements["p2"].value;
-				p3s = schedule.elements["p3"].value;
-				p4s = schedule.elements["p4"].value;
-				document.getElementById("yourschedule").innerHTML = ("Period 1: " + p1s + "<br>")
-				document.getElementById("yourschedule").innerHTML += ("Period 2: " + p2s + "<br>" )
-				document.getElementById("yourschedule").innerHTML += ("Period 3: " + p3s + "<br>")
-				document.getElementById("yourschedule").innerHTML += ("Period 4: " + p4s)
-			}
-			function submitoffered() {
-				schedule = document.getElementById("offered");
-				p1o = offered.elements["p1"].value;
-				p2o = offered.elements["p2"].value;
-				p3o = offered.elements["p3"].value;
-				p4o = offered.elements["p4"].value;
-				document.getElementById("youroffered").innerHTML = ("Period 1: " + p1o + "<br>")
-				document.getElementById("youroffered").innerHTML += ("Period 2: " + p2o + "<br>" )
-				document.getElementById("youroffered").innerHTML += ("Period 3: " + p3o + "<br>")
-				document.getElementById("youroffered").innerHTML += ("Period 4: " + p4o)
-			}
-			function submitsdesired() {
-				schedule = document.getElementById("desired");
-				p1d = desired.elements["p1"].value;
-				p2d = desired.elements["p2"].value;
-				p3d = desired.elements["p3"].value;
-				p4d = desired.elements["p4"].value;
-				document.getElementById("yourdesired").innerHTML = ("Period 1: " + p1d + "<br>")
-				document.getElementById("yourdesired").innerHTML += ("Period 2: " + p2d + "<br>" )
-				document.getElementById("yourdesired").innerHTML += ("Period 3: " + p3d + "<br>")
-				document.getElementById("yourdesired").innerHTML += ("Period 4: " + p4d)
-			}
-		</script>
 	</head>
 	<body>
+
 		<ul id="navbar">
 			<li id="navbarlist"><a href="contact.html">Contact</a> </li>
 			<li id="navbarlist"><a href="Matches.html">Matches</a> </li>
@@ -53,75 +13,109 @@
 			<li id="navbarlist"><a href="about.html">About</a> </li>
 			<li id="navbarlist"><a href="home.html">Home</a> </li>
 		</ul>
+
+		<div align = "center">
+			<table width =1200>
+				<tr>
+					<th><h1>Personal</h1></th>
+					<th><h1>Your Schedule</h1></th>
+					<th><h1>Offered</h1></th>
+					<th><h1>Desired</h1></th>
+				</tr>
+				<tr>
+					<td> 
+						<form> 
+							<p> Full Name: <input type="text" size="15" id = "name"> </p>
+						</form>
+						
+					</td>
+					<td> 
+						<form> 
+							<p> <input type = "text" size = "15" placeholder = "Period 1" id ="p1s"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 2" id ="p2s"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 3" id ="p3s"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 4" id ="p4s"> </p>
+						</form>
+					</td>
+					<td>
+						<form> 
+							<p> <input type = "text" size = "15" placeholder = "Period 1" id ="p1o"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 2" id ="p2o"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 3" id ="p3o"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 4" id ="p4o"> </p>
+						</form>
+					</td>
+					<td>
+						<form> 
+							<p> <input type = "text" size = "15" placeholder = "Period 1" id ="p1d"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 2" id ="p2d"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 3" id ="p3d"> </p>
+							<p> <input type = "text" size = "15" placeholder = "Period 4" id ="p4d"> </p>
+						</form>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="writeDataUsers()"> Submit </button> 
+					</td>
+					<td>
+						<button onclick="submitschedule()"> Submit </button> 
+					</td>
+					<td>
+						<button onclick="submitoffered()"> Submit </button> 
+					</td>
+					<td>
+						<button onclick="submitsdesired()"> Submit </button> 
+					</td>
+				</tr>
+			</table> 
+			<button onclick="sumbitData()"> Submit </button>
+		</div>
+
 		
 
-		<table width =1200>
-			<tr>
-				<th><h1>Personal</h1></th>
-				<th><h1>Your Schedule</h1></th>
-				<th><h1>Offered</h1></th>
-				<th><h1>Desired</h1></th>
-			</tr>
-			<tr>
-				<td> 
-					<form id="personal"> 
-						<p> Full Name: <input name="name" type="text" size="15"> </p>
-					</form>
-					
-				</td>
-				<td> 
-					<form id="schedule"> 
-						<p> Period 1: <input name="p1" type="text" size="15"> </p>
-						<p> Period 2: <input name="p2" type="text" size="15"> </p>
-						<p> Period 3: <input name="p3" type="text" size="15"> </p>
-						<p> Period 4: <input name="p4" type="text" size="15"> </p>
-					</form>
-					
-				<td>
-					<form id="offered"> 
-						<p> Period 1: <input name="p1" type="text" size="15"> </p>
-						<p> Period 2: <input name="p2" type="text" size="15"> </p>
-						<p> Period 3: <input name="p3" type="text" size="15"> </p>
-						<p> Period 4: <input name="p4" type="text" size="15"> </p>
-					</form>			
-				</td>
-				<td>
-					<form id="desired"> 
-						<p> Period 1: <input name="p1" type="text" size="15"> </p>
-						<p> Period 2: <input name="p2" type="text" size="15"> </p>
-						<p> Period 3: <input name="p3" type="text" size="15"> </p>
-						<p> Period 4: <input name="p4" type="text" size="15"> </p>
-					</form>		
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<button onclick="submitname()"> Submit </button> 
-				</td>
-				<td>
-					<button onclick="submitschedule()"> Submit </button> 
-				</td>
-				<td>
-					<button onclick="submitoffered()"> Submit </button> 
-				</td>
-				<td>
-					<button onclick="submitsdesired()"> Submit </button> 
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<p id="name"></p>
-				</td>
-				<td>
-					<p id="yourschedule"></p>
-				</td>
-				<td>
-					<p id="youroffered"></p>
-				</td>
-				<td>
-					<p id="yourdesired"></p>
-				</td>
-			</tr>	
-		</table>
+		
+		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyAt_-_1I9ISW4PmF1DgW_03wO9PLdJ10uE",
+		    authDomain: "coursetown-cfe36.firebaseapp.com",
+		    databaseURL: "https://coursetown-cfe36.firebaseio.com",
+		    projectId: "coursetown-cfe36",
+		    storageBucket: "coursetown-cfe36.appspot.com",
+		    messagingSenderId: "141311531998"
+		  };
+		  firebase.initializeApp(config);
+		  
+		  function writeDataUsers() {
+		  	firebase.database().ref("Users").push().set({
+		  		Name: document.getElementById("name").value
+		  	})
+		  }
+
+		  function writeData() {
+		  	firebase.database().ref("User").set({
+		  		Period_1: document.getElementById("p1s").value,
+		  		Period_2: document.getElementById("p2s").value,
+		  		Period_3: document.getElementById("p3s").value,
+		  		Period_4: document.getElementById("p4s").value
+		  	});
+		  }
+
+		  function sumbitData() {
+		  	firebase.database().ref("Users").push().set({
+		  		Name: document.getElementById("name").value
+		  	})
+		  	firebase.database().ref("Users").set({
+		  		Period_1: document.getElementById("p1s").value,
+		  		Period_2: document.getElementById("p2s").value,
+		  		Period_3: document.getElementById("p3s").value,
+		  		Period_4: document.getElementById("p4s").value
+		  	});
+		  }
+
+		</script>
+
 	</body>
 </html>
