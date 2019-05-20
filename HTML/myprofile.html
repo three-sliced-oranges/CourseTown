@@ -54,27 +54,9 @@
 						</form>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<button onclick="writeDataUsers()"> Submit </button> 
-					</td>
-					<td>
-						<button onclick="submitschedule()"> Submit </button> 
-					</td>
-					<td>
-						<button onclick="submitoffered()"> Submit </button> 
-					</td>
-					<td>
-						<button onclick="submitsdesired()"> Submit </button> 
-					</td>
-				</tr>
 			</table> 
-			<button onclick="sumbitData()"> Submit </button>
+			<button align = "left" onclick="submitData()"> Submit </button>
 		</div>
-
-		
-
-		
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
 		  // Initialize Firebase
@@ -87,35 +69,31 @@
 		    messagingSenderId: "141311531998"
 		  };
 		  firebase.initializeApp(config);
-		  
-		  function writeDataUsers() {
-		  	firebase.database().ref("Users").push().set({
-		  		Name: document.getElementById("name").value
-		  	})
-		  }
 
-		  function writeData() {
-		  	firebase.database().ref("User").set({
+		  function submitData() {
+		  	var name = document.getElementById("name").value;
+		  	var usersRef = firebase.database().ref("Students/" + name);
+
+		  	usersRef.child("Schedule").set({
 		  		Period_1: document.getElementById("p1s").value,
 		  		Period_2: document.getElementById("p2s").value,
 		  		Period_3: document.getElementById("p3s").value,
 		  		Period_4: document.getElementById("p4s").value
-		  	});
-		  }
-
-		  function sumbitData() {
-		  	firebase.database().ref("Users").push().set({
-		  		Name: document.getElementById("name").value
 		  	})
-		  	firebase.database().ref("Users").set({
-		  		Period_1: document.getElementById("p1s").value,
-		  		Period_2: document.getElementById("p2s").value,
-		  		Period_3: document.getElementById("p3s").value,
-		  		Period_4: document.getElementById("p4s").value
-		  	});
+		  	usersRef.child("Offered").set({
+		  		Period_1: document.getElementById("p1o").value,
+		  		Period_2: document.getElementById("p2o").value,
+		  		Period_3: document.getElementById("p3o").value,
+		  		Period_4: document.getElementById("p4o").value
+		  	})
+		  	usersRef.child("Desired").set({
+		  		Period_1: document.getElementById("p1d").value,
+		  		Period_2: document.getElementById("p2d").value,
+		  		Period_3: document.getElementById("p3d").value,
+		  		Period_4: document.getElementById("p4d").value
+		  	})
 		  }
-
-		</script>
+		  </script>
 
 	</body>
 </html>
