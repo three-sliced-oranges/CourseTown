@@ -16,9 +16,9 @@
 
 		<div align = "center">
 			<table width =1200>
-				<tr>
+				<tr align = "left">
 					<th><h1>Personal</h1></th>
-					<th><h1>Your Schedule</h1></th>
+					<th><h1>Your Schedule </h1></th>
 					<th><h1>Offered</h1></th>
 					<th><h1>Desired</h1></th>
 				</tr>
@@ -56,6 +56,7 @@
 				</tr>
 			</table> 
 			<button align = "left" onclick="submitData()"> Submit </button>
+			<p> Please fill in according to your day 1 schedule. </p>
 		</div>
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
@@ -92,7 +93,10 @@
 		  		Period_3: document.getElementById("p3d").value,
 		  		Period_4: document.getElementById("p4d").value
 		  	})
+		  	alert("Submission complete.")
 		  }
+
+
 		  </script>
 
 	</body>
