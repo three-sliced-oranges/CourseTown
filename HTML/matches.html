@@ -20,6 +20,7 @@
 
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
+
 		  	// Initialize Firebase
 		 	var config = {
 			    apiKey: "AIzaSyAt_-_1I9ISW4PmF1DgW_03wO9PLdJ10uE",
@@ -30,10 +31,25 @@
 			    messagingSenderId: "141311531998"
 		 	};
 		  	firebase.initializeApp(config);
+		  	
+		  	
 
-		  	ref = firebase.database().ref().child("hello");
+		  	var ref = firebase.database().ref("Students/Kelly Ng");
+		  	ref.once('value')
+		  		.then(function(snapshot) {
+		  			var name = snapshot.child("Desired/Period_1").val();
+		  			document.getElementById("data").innerHTML = JSON.stringify(name); 
 
-		  	ref.on("value", snap => document.getElementById("data").innerHTML = (snap.val()));
+		  			
+		  		});
+		  	
+		  	
+
+		  	
+
+		  	/** ref = firebase.database().ref("Students/Kelly Ng/Schedule").child("Period 1");
+
+		  	ref.on("value", snap => document.getElementById("data").innerHTML = (snap.val())); */
 
 
 
