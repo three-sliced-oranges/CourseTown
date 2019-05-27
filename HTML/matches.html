@@ -15,5 +15,28 @@
 		<table width =1200>
 			<tr><th><h1>Matches</h1></th><th><h1>History</h1></th></tr>
 		</table>
+		
+		<p id = "data"></p>
+
+		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+		<script>
+		  	// Initialize Firebase
+		 	var config = {
+			    apiKey: "AIzaSyAt_-_1I9ISW4PmF1DgW_03wO9PLdJ10uE",
+			    authDomain: "coursetown-cfe36.firebaseapp.com",
+			    databaseURL: "https://coursetown-cfe36.firebaseio.com",
+			    projectId: "coursetown-cfe36",
+			    storageBucket: "coursetown-cfe36.appspot.com",
+			    messagingSenderId: "141311531998"
+		 	};
+		  	firebase.initializeApp(config);
+
+		  	ref = firebase.database().ref().child("hello");
+
+		  	ref.on("value", snap => document.getElementById("data").innerHTML = (snap.val()));
+
+
+
+		  </script>	  	
 	</body>
 </html>
