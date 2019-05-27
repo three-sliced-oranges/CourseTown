@@ -13,17 +13,22 @@
 			<li id="navbarlist"><a href="about.html">About</a> </li>
 			<li id="navbarlist"><a href="home.html">Home</a> </li>
 		</ul>
-
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 		<div align="center">
 			<table width =1200>
-				<tr align = "left">
+				<tr align = "center">
 					<th><h1>Personal</h1></th>
 					<th><h1>Your Schedule </h1></th>
 					<th><h1>Offered</h1></th>
 					<th><h1>Desired</h1></th>
 				</tr>
-				<tr>
-					<td> 
+				<tr align = "center">
+					<td rowspan="2"> 
 						<form> 
 							<p> Full Name: <input type="text" size="15" id = "name"> </p>
 						</form>
@@ -56,14 +61,14 @@
 						</form>
 					</td>
 				</tr>
-				<tr>
+				<tr align = "center">
 					<td>
-					</td>
-					<td>
+						<br>
 						<button onclick="submitSchedule()">Submit</button>
 						<p> Please fill in according to your day 1 schedule. </p>
 					</td>
 					<td colspan = "2">
+						<br>
 						<button onclick="submitOffer()">Submit</button>
 						<p> You must offer and desire a course for the same period. </p>
 					</td>
@@ -82,11 +87,9 @@
 		    messagingSenderId: "141311531998"
 		  };
 		  firebase.initializeApp(config);
-
 		  function submitSchedule() {
 		  	var name = document.getElementById("name").value;
 		  	var usersRef = firebase.database().ref("Students/" + name);
-
 		  	usersRef.child("Schedule").set({
 		  		Period_1: document.getElementById("p1s").value,
 		  		Period_2: document.getElementById("p2s").value,
@@ -95,11 +98,9 @@
 		  	})
 		  	alert("Submission complete.")
 		  }
-
 		  function submitOffer() {
 		  	var name = document.getElementById("name").value;
 		  	var usersRef = firebase.database().ref("Students/" + name);
-
 		  	usersRef.child("Offered").set({
 		  		Period_1: document.getElementById("p1o").value,
 		  		Period_2: document.getElementById("p2o").value,
