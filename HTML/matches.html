@@ -43,11 +43,11 @@
 						<button onclick="match()">Find Matches</button>
 					</td>
 				</tr>
-			</table> 	
+			</table> 
+			<p id = "matches"></p>	
 		</div>
 		
-		<p id = "data"></p>
-		<p id = "data2"></p>
+		
 
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
@@ -140,7 +140,9 @@
 					  				break;
 					  			}
 					  		}
-					  		alert(students[i] + "\nOffered: " + offered1[i] + "\nDesired: " + desired1[i]);
+					  		document.getElementById("matches").innerHTML = students[i] + "<br>" ;
+					  		document.getElementById("matches").innerHTML += "Offered: " + offered1[i] + "<br>";
+					  		document.getElementById("matches").innerHTML += "Desired: " + desired1[i] + "<br>";
 		  				});	
 		  	}
 
