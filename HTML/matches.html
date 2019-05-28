@@ -12,11 +12,42 @@
 			<li id="navbarlist"><a href="about.html">About</a> </li>
 			<li id="navbarlist"><a href="home.html">Home</a> </li>
 		</ul>
-		<table width =1200>
-			<tr><th><h1>Matches</h1></th><th><h1>History</h1></th></tr>
-		</table>
+		<br>
+		<br>
+		<br>
+		<div align="center">
+			<table width =1250>
+				<col width = 300>
+				<col widht = 350>
+				<col width = 600>
+				<tr align = "center">
+					<th><h1>Personal</h1></th>
+					<th><h1>Select Period</h1></th>
+					<th><h1>Matches</h1></th>
+				</tr>
+				<tr align = "center">
+					<td> 
+						<form> 
+							<p> Full Name: <input type="text" size="15" id = "name"> </p>
+						</form>
+					</td>
+					<td>
+						<form>
+							<input type="radio" name="period" id="p1"> Period 1 
+							<input type="radio" name="period" id="p2"> Period 2 
+							<input type="radio" name="period" id="p3"> Period 3 
+							<input type="radio" name="period" id="p4"> Period 4 
+						</form>
+					</td>
+					<td> 
+						<button onclick="match()">Find Matches</button>
+					</td>
+				</tr>
+			</table> 	
+		</div>
 		
 		<p id = "data"></p>
+		<p id = "data2"></p>
 
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
@@ -32,26 +63,101 @@
 		 	};
 		  	firebase.initializeApp(config);
 		  	
-		  	
+		  	var students = [];
 
-		  	var ref = firebase.database().ref("Students/Kelly Ng");
-		  	ref.once('value')
+		  	var offered1 = [];
+		  	var offered2 = [];
+		  	var offered3 = [];
+		  	var offered4 = [];
+
+		  	var desired1 = []; 
+		  	var desired2 = []; 
+		  	var desired3 = []; 
+		  	var desired4 = []; 
+
+		  	var usersRef = firebase.database().ref("Students").orderByKey();
+		  	usersRef.once('value')
 		  		.then(function(snapshot) {
-		  			var name = snapshot.child("Desired/Period_1").val();
-		  			document.getElementById("data").innerHTML = JSON.stringify(name); 
+		  			snapshot.forEach(function(childSnapshot) {
 
-		  			
+		  				/*Collecting student names*/
+		  				var name = childSnapshot.key;
+		  				
+		  				/*Collecting offered and desired courses based on period*/
+		  				var p1o = snapshot.child(name + "/Offered/Period_1").val();
+		  				var p2o = snapshot.child(name + "/Offered/Period_2").val();
+		  				var p3o = snapshot.child(name + "/Offered/Period_3").val();
+		  				var p4o = snapshot.child(name + "/Offered/Period_4").val();
+		  				
+
+		  				var p1d = snapshot.child(name + "/Desired/Period_1").val();
+		  				var p2d = snapshot.child(name + "/Desired/Period_2").val();
+		  				var p3d = snapshot.child(name + "/Desired/Period_3").val();
+		  				var p4d = snapshot.child(name + "/Desired/Period_4").val();
+		  				
+		  				/*Add values to their list*/
+		  				students.push(name);
+
+		  				offered1.push(p1o);
+		  				offered2.push(p2o);
+		  				offered3.push(p3o);
+		  				offered4.push(p4o);
+
+		  				desired1.push(p1d);
+		  				desired2.push(p2d);
+		  				desired3.push(p3d);
+		  				desired4.push(p4d);
+		  			});	
 		  		});
-		  	
-		  	
 
-		  	
+		  	function match() {
 
-		  	/** ref = firebase.database().ref("Students/Kelly Ng/Schedule").child("Period 1");
+		  		var name = document.getElementById("name").value;
 
-		  	ref.on("value", snap => document.getElementById("data").innerHTML = (snap.val())); */
+		  		/*Checks to see which period was selected*/
+		  		if (document.getElementById("p1").checked == true) {
+		  			var period = 1;
+		  			alert("PERIOD !")
+		  		} else if (document.getElementById("p2").checked == true) {
+		  			var period = 2;
+		  		} else if (document.getElementById("p3").checked == true) {
+		  			var period = 3;
+		  		} else if (document.getElementById("p4").checked == true) {
+		  			var period = 4;
+		  		}
 
+		  		/*Finds user's desired course*/
+		  		var ref = firebase.database().ref("Students/" + name);
+		  			ref.once('value')
+		  				.then(function(snapshot) {
+		  					
+		  					desired = snapshot.child("Desired/Period_1").val();
 
+		  					/*Matches it with one of the offered courses available*/
+		  					var i;
+					  		for (i = 0; i < offered1.length; i++) {
+					  			console.log(offered1[i]);
+					  			if (offered1[i] == desired) {
+					  				break;
+					  			}
+					  		}
+					  		alert(students[i] + "\nOffered: " + offered1[i] + "\nDesired: " + desired1[i]);
+		  				});	
+		  	}
+
+		  	/* IF YOU SEE OBJECT OBJECT USE "JSON.stringify()"*/
+
+		  	/*  testing 
+
+		  		alert(students)
+		  		alert(offered1)
+		  		alert(offered2)
+		  		alert(offered3)
+		  		alert(offered4)
+		  		alert(desired1)
+		  		alert(desired2)
+		  		alert(desired3)
+		  		alert(desired4) */
 
 		  </script>	  	
 	</body>
