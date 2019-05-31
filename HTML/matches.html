@@ -131,24 +131,71 @@
 		  				.then(function(snapshot) {
 		  					
 		  					desired = snapshot.child("Desired/Period_1").val();
-		  					desired2 = snapshot.child("Desired/Period_2").val();
-		  					desired3 = snapshot.child("Desired/Period_3").val();
-		  					desired4 = snapshot.child("Desired/Period_4").val();
-
+		 
 		  					/*Matches it with one of the offered courses available*/
-		  					var i;
-					  		for (i = 0; i < offered1.length; i++) {
-					  			console.log(offered1[i]);
-					  			if (offered1[i] == desired) {
-					  				break;
-					  			}
+		  					if (period == 1) {
+		  						desired = snapshot.child("Desired/Period_1").val();
+			  					var i;
+						  		for (i = 0; i < offered1.length; i++) {
+						  			console.log(offered1[i]);
+						  			if (offered1[i] == desired) {
+							  			document.getElementById("matches").innerHTML = students[i] + "<br>" ;
+								  		document.getElementById("matches").innerHTML += "Offered: " + offered1[i] + "<br>";
+								  		document.getElementById("matches").innerHTML += "Desired: " + desired1[i] + "<br>";
+						  				break;
+						  			}
+						  		}
+						  		
 					  		}
-					  		document.getElementById("matches").innerHTML = students[i] + "<br>" ;
-					  		document.getElementById("matches").innerHTML += "Offered: " + offered1[i] + "<br>";
-					  		document.getElementById("matches").innerHTML += "Desired: " + desired1[i] + "<br>";
+
+					  		else if (period == 2) {
+					  			desired = snapshot.child("Desired/Period_2").val();
+			  					var i;
+						  		for (i = 0; i < offered2.length; i++) {
+						  			console.log(offered2[i]);
+						  			if (offered2[i] == desired) {
+						  				document.getElementById("matches").innerHTML = students[i] + "<br>" ;
+								  		document.getElementById("matches").innerHTML += "Offered: " + offered2[i] + "<br>";
+								  		document.getElementById("matches").innerHTML += "Desired: " + desired2[i] + "<br>";
+						  				break;
+						  			}
+						  		}
+						  		
+					  		}
+
+					  		else if (period == 3) {
+					  			desired = snapshot.child("Desired/Period_3").val();
+			  					var i;
+						  		for (i = 0; i < offered3.length; i++) {
+						  			console.log(offered3[i]);
+						  			if (offered3[i] == desired) {
+						  				document.getElementById("matches").innerHTML = students[i] + "<br>" ;
+								  		document.getElementById("matches").innerHTML += "Offered: " + offered3[i] + "<br>";
+								  		document.getElementById("matches").innerHTML += "Desired: " + desired3[i] + "<br>";
+						  				break;
+						  			}
+						  		}
+						  		
+					  		}
+
+					  		else if (period == 4) {
+					  			desired = snapshot.child("Desired/Period_4").val();
+			  					var i;
+						  		for (i = 0; i < offered4.length; i++) {
+						  			console.log(offered4[i]);
+						  			if (offered4[i] == desired) {
+						  				document.getElementById("matches").innerHTML = students[i] + "<br>" ;
+								  		document.getElementById("matches").innerHTML += "Offered: " + offered4[i] + "<br>";
+								  		document.getElementById("matches").innerHTML += "Desired: " + desired4[i] + "<br>";
+						  				break;
+						  			}
+						  		}
+						  		
+					  		}
 		  				});	
 		  	}
 
+		  
 		  	/* IF YOU SEE OBJECT OBJECT USE "JSON.stringify()"*/
 
 		  	/*  testing 
