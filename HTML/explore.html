@@ -13,39 +13,24 @@
 			<li id="navbarlist"><a href="home.html">Home</a> </li>
 		</ul>
 		<div align="center">
-			<table width=1250 bordercolor=black>
-				<tr align="center">
-					<td>
-						<p> hi </p>
-					</td>
-					<td> 
-						<p> hi </p>
-					</td>
-					<td> 
-						<p> hi </p>
-					</td>
+			<table id="Period1" width=350>
+				<tr> 
+					<th><h1>Period 1</h1></th>
 				</tr>
-				<tr align="center">
-					<td>
-						<p> hi </p>
-					</td>
-					<td> 
-						<p> hi </p>
-					</td>
-					<td> 
-						<p> hi </p>
-					</td>
+			</table>
+			<table id="Period2" width=350>
+				<tr> 
+					<th><h1>Period 2</h1></th>
 				</tr>
-				<tr align="center">
-					<td>
-						<p> hi </p>
-					</td>
-					<td> 
-						<p> hi </p>
-					</td>
-					<td> 
-						<p> hi </p>
-					</td>
+			</table> 
+			<table id="Period3" width=350>
+				<tr> 
+					<th><h1>Period 3</h1></th>
+				</tr>
+			</table> 
+			<table id="Period4" width=350>
+				<tr> 
+					<th><h1>Period 4</h1></th>
 				</tr>
 			</table> 
 		</div>
@@ -63,6 +48,62 @@
 		 	};
 		  	firebase.initializeApp(config);
 
+		  	var period1 = [];
+		  	var period2 = [];
+		  	var period3 = [];
+		  	var period4 = [];
+
+		  	var usersRef = firebase.database().ref("Students").orderByKey();
+		  	usersRef.once('value')
+		  		.then(function(snapshot) {
+		  			snapshot.forEach(function(childSnapshot) {
+
+		  				/*Collecting student names*/
+		  				var name = childSnapshot.key;
+		  				
+		  				/*Collecting offered and desired courses based on period*/
+		  				var p1 = snapshot.child(name + "/Schedule/Period_1").val();
+		  				var p2 = snapshot.child(name + "/Schedule/Period_2").val();
+		  				var p3 = snapshot.child(name + "/Schedule/Period_3").val();
+		  				var p4 = snapshot.child(name + "/Schedule/Period_4").val();
+		  				
+		  				if (p1 != "STUDY" && period1.includes(p1) == false) {
+		  					period1.push(p1);
+		  				}
+
+		  				if (p2 != "STUDY" && period2.includes(p2) == false) {
+		  					period2.push(p2);
+		  				}
+
+		  				if (p3 != "STUDY" && period3.includes(p3) == false) {
+		  					period3.push(p3);
+		  				}
+
+		  				if (p4 != "STUDY" && period4.includes(p4) == false) {
+		  					period4.push(p4);
+		  				}
+		  			});	
+
+		  			var i;
+			  		for (i = 0; i < period1.length; i++) {
+			  			document.getElementById("Period1").innerHTML += "<tr><td>" + period1[i] + "</td></tr>";
+			  		}
+
+			  		var i;
+			  		for (i = 0; i < period2.length; i++) {
+			  			document.getElementById("Period2").innerHTML += "<tr><td>" + period2[i] + "</td></tr>";
+			  		}
+
+			  		var i;
+			  		for (i = 0; i < period3.length; i++) {
+			  			document.getElementById("Period3").innerHTML += "<tr><td>" + period3[i] + "</td></tr>";
+			  		}
+
+			  		var i;
+			  		for (i = 0; i < period4.length; i++) {
+			  			document.getElementById("Period4").innerHTML += "<tr><td>" + period4[i] + "</td></tr>";
+			  		}
+		  		});
 		</script>
 	</body>
 </html>
