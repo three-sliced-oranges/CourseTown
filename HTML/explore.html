@@ -13,26 +13,38 @@
 			<li id="navbarlist"><a href="home.html">Home</a> </li>
 		</ul>
 		<div align="center">
-			<table id="Period1" width=350>
-				<tr> 
-					<th><h1>Period 1</h1></th>
-				</tr>
+			<br>
+			<br>
+			<table width=800>
+				<tbody id="Period1">
+					<tr id="row1">
+					</tr>
+				</tbody>
 			</table>
-			<table id="Period2" width=350>
-				<tr> 
-					<th><h1>Period 2</h1></th>
-				</tr>
-			</table> 
-			<table id="Period3" width=350>
-				<tr> 
-					<th><h1>Period 3</h1></th>
-				</tr>
-			</table> 
-			<table id="Period4" width=350>
-				<tr> 
-					<th><h1>Period 4</h1></th>
-				</tr>
-			</table> 
+			<br>
+			<br>
+			<table width=800>
+				<tbody id="Period2">
+					<tr id="row2">
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<br>
+			<table width=800>
+				<tbody id="Period3">
+					<tr id="row3">
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<br>
+			<table width=800>
+				<tbody id="Period4">
+					<tr id="row4">
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
@@ -86,21 +98,29 @@
 
 		  			var i;
 			  		for (i = 0; i < period1.length; i++) {
+			  			var rows = i + 2;
+			  			document.getElementById("row1").innerHTML = "<td width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1>Period 1</h1></td>";
 			  			document.getElementById("Period1").innerHTML += "<tr><td>" + period1[i] + "</td></tr>";
 			  		}
 
 			  		var i;
 			  		for (i = 0; i < period2.length; i++) {
+			  			var rows = i + 2;
+			  			document.getElementById("row2").innerHTML = "<td width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1>Period 2</h1></td>";
 			  			document.getElementById("Period2").innerHTML += "<tr><td>" + period2[i] + "</td></tr>";
 			  		}
 
 			  		var i;
 			  		for (i = 0; i < period3.length; i++) {
+			  			var rows = i + 2;
+			  			document.getElementById("row3").innerHTML = "<td width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1>Period 3</h1></td>";
 			  			document.getElementById("Period3").innerHTML += "<tr><td>" + period3[i] + "</td></tr>";
 			  		}
 
 			  		var i;
 			  		for (i = 0; i < period4.length; i++) {
+			  			var rows = i + 2;
+			  			document.getElementById("row4").innerHTML = "<td width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1>Period 4</h1></td>";
 			  			document.getElementById("Period4").innerHTML += "<tr><td>" + period4[i] + "</td></tr>";
 			  		}
 		  		});

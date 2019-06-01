@@ -38,6 +38,9 @@ table, th, td{
 	border-collapse: collapse;
 }
 
+tbody {
+    font-size: 18px;
+}
 #nomatch {
     font-size: 50px;
 
