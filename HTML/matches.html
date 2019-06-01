@@ -44,10 +44,13 @@
 					</td>
 				</tr>
 			</table> 
-			<p id = "matches"></p>	
+			<p id=nomatch> </p>
 		</div>
 		
 		
+		<div id = "explore" class="grid-container">
+		</div>
+
 
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
@@ -107,11 +110,38 @@
 		  				desired2.push(p2d);
 		  				desired3.push(p3d);
 		  				desired4.push(p4d);
-		  			});	
+		  			});
+
+		  			var i;
+					for (i = 0; i < students.length; i++) {
+						if (offered1[i] != "") {
+				  			offered = offered1[i];
+				  			desired = desired1[i];
+				  		}
+				  		else if (offered2[i] != "") {
+				  			offered = offered2[i];
+				  			desired = desired2[i];
+				  		}
+				  		else if (offered3[i] != "") {
+				  			offered = offered3[i];
+				  			desired = desired3[i];
+				  		}
+				  		else if (offered4[i] != "") {
+				  			offered = offered4[i];
+				  			desired = desired4[i];
+				  		}
+				  		else {
+				  			offered = "N/A";
+				  			desired = "N/A";
+				  		}
+				  		document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[i] + "<br><br>Offered: " + offered + "<br>Desired: " + desired + "</div>";
+				  	}	
 		  		});
 
 		  	function match() {
 
+		  		document.getElementById("explore").innerHTML = "";
+		  		document.getElementById("nomatch").innerHTML = "";
 		  		var name = document.getElementById("name").value;
 
 		  		/*Checks to see which period was selected*/
@@ -131,85 +161,66 @@
 		  				.then(function(snapshot) {
 		  					
 		  					desired = snapshot.child("Desired/Period_1").val();
-		 
+		 					offermatch = [];
 		  					/*Matches it with one of the offered courses available*/
 		  					if (period == 1) {
 		  						desired = snapshot.child("Desired/Period_1").val();
 			  					var i;
 						  		for (i = 0; i < offered1.length; i++) {
-						  			console.log(offered1[i]);
-						  			if (offered1[i] == desired) {
-							  			document.getElementById("matches").innerHTML = students[i] + "<br>" ;
-								  		document.getElementById("matches").innerHTML += "Offered: " + offered1[i] + "<br>";
-								  		document.getElementById("matches").innerHTML += "Desired: " + desired1[i] + "<br>";
-						  				break;
+						  			if (offered1[i] != "" && offered1[i] == desired) {
+						  				offermatch.push(i);
 						  			}
 						  		}
-						  		
+						  		for (i = 0; i < offermatch.length; i++) {
+						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + "<br><br>Offered: " + offered1[offermatch[i]] + "<br>Desired: " + desired1[offermatch[i]] + "</div>";
+						  		}
 					  		}
 
 					  		else if (period == 2) {
 					  			desired = snapshot.child("Desired/Period_2").val();
 			  					var i;
 						  		for (i = 0; i < offered2.length; i++) {
-						  			console.log(offered2[i]);
-						  			if (offered2[i] == desired) {
-						  				document.getElementById("matches").innerHTML = students[i] + "<br>" ;
-								  		document.getElementById("matches").innerHTML += "Offered: " + offered2[i] + "<br>";
-								  		document.getElementById("matches").innerHTML += "Desired: " + desired2[i] + "<br>";
-						  				break;
+						  			if (offered2[i] != "" && offered2[i] == desired ) {
+						  				offermatch.push(i);
 						  			}
 						  		}
-						  		
+						  		for (i = 0; i < offermatch.length; i++) {
+						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + "<br><br>Offered: " + offered2[offermatch[i]] + "<br>Desired: " + desired2[offermatch[i]] + "</div>";
+						  		}
 					  		}
 
 					  		else if (period == 3) {
 					  			desired = snapshot.child("Desired/Period_3").val();
 			  					var i;
 						  		for (i = 0; i < offered3.length; i++) {
-						  			console.log(offered3[i]);
-						  			if (offered3[i] == desired) {
-						  				document.getElementById("matches").innerHTML = students[i] + "<br>" ;
-								  		document.getElementById("matches").innerHTML += "Offered: " + offered3[i] + "<br>";
-								  		document.getElementById("matches").innerHTML += "Desired: " + desired3[i] + "<br>";
-						  				break;
+						  			if (offered3[i] != "" && offered3[i] == desired) {
+						  				offermatch.push(i);
 						  			}
 						  		}
-						  		
+						  		for (i = 0; i < offermatch.length; i++) {
+						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + "<br><br>Offered: " + offered3[offermatch[i]] + "<br>Desired: " + desired3[offermatch[i]] + "</div>";
+						  		}
 					  		}
 
 					  		else if (period == 4) {
 					  			desired = snapshot.child("Desired/Period_4").val();
 			  					var i;
 						  		for (i = 0; i < offered4.length; i++) {
-						  			console.log(offered4[i]);
-						  			if (offered4[i] == desired) {
-						  				document.getElementById("matches").innerHTML = students[i] + "<br>" ;
-								  		document.getElementById("matches").innerHTML += "Offered: " + offered4[i] + "<br>";
-								  		document.getElementById("matches").innerHTML += "Desired: " + desired4[i] + "<br>";
-						  				break;
+						  			if (offered4[i] != "" && offered4[i] == desired) {
+						  				offermatch.push(i);
 						  			}
 						  		}
-						  		
+						  		for (i = 0; i < offermatch.length; i++) {
+						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + "<br><br>Offered: " + offered4[offermatch[i]] + "<br>Desired: " + desired4[offermatch[i]] + "</div>";
+						  		}  		
 					  		}
+
+					  		if (offermatch.length == 0) {
+					  			document.getElementById("nomatch").innerHTML = "Sorry, no matches were found. ☹️";
+					  		}
+					  		
 		  				});	
 		  	}
-
-		  
-		  	/* IF YOU SEE OBJECT OBJECT USE "JSON.stringify()"*/
-
-		  	/*  testing 
-
-		  		alert(students)
-		  		alert(offered1)
-		  		alert(offered2)
-		  		alert(offered3)
-		  		alert(offered4)
-		  		alert(desired1)
-		  		alert(desired2)
-		  		alert(desired3)
-		  		alert(desired4) */
-
 		  </script>	  	
 	</body>
 </html>
