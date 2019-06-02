@@ -90,39 +90,54 @@
 		  firebase.initializeApp(config);
 
 		  function remove() {
-		  	alert("User has been deleted.");
 		  	var name = document.getElementById("name").value;
-		  	firebase.database().ref("Students/" + name).remove();
+		  	if (name != "") {
+			  	firebase.database().ref("Students/" + name).remove();
+			  	alert("User has been deleted.");
+		  	}
+		  	else {
+		  		alert("Please enter your full name.");
+		  	}
 		  }
 
 		  function submitSchedule() {
 		  	var name = document.getElementById("name").value;
 		  	var usersRef = firebase.database().ref("Students/" + name);
-		  	usersRef.child("Schedule").set({
-		  		Period_1: document.getElementById("p1s").value,
-		  		Period_2: document.getElementById("p2s").value,
-		  		Period_3: document.getElementById("p3s").value,
-		  		Period_4: document.getElementById("p4s").value
-		  	})
-		  	alert("Submission complete.")
+		  	if (name != "") {
+			  	usersRef.child("Schedule").set({
+			  		Period_1: document.getElementById("p1s").value,
+			  		Period_2: document.getElementById("p2s").value,
+			  		Period_3: document.getElementById("p3s").value,
+			  		Period_4: document.getElementById("p4s").value
+			  	})
+			  	alert("Submission complete.");
+		  	}
+		  	else {
+			 	alert("Please enter your full name.");
+			 }	
 		  }
 
 		  function submitOffer() {
 		  	var name = document.getElementById("name").value;
 		  	var usersRef = firebase.database().ref("Students/" + name);
-		  	usersRef.child("Offered").set({
-		  		Period_1: document.getElementById("p1o").value,
-		  		Period_2: document.getElementById("p2o").value,
-		  		Period_3: document.getElementById("p3o").value,
-		  		Period_4: document.getElementById("p4o").value
-		  	})
-		  	usersRef.child("Desired").set({
-		  		Period_1: document.getElementById("p1d").value,
-		  		Period_2: document.getElementById("p2d").value,
-		  		Period_3: document.getElementById("p3d").value,
-		  		Period_4: document.getElementById("p4d").value
-		  	})
-		  	alert("Submission complete.")
+		  	if (name != "") {
+			  	usersRef.child("Offered").set({
+			  		Period_1: document.getElementById("p1o").value,
+			  		Period_2: document.getElementById("p2o").value,
+			  		Period_3: document.getElementById("p3o").value,
+			  		Period_4: document.getElementById("p4o").value
+			  	})
+			  	usersRef.child("Desired").set({
+			  		Period_1: document.getElementById("p1d").value,
+			  		Period_2: document.getElementById("p2d").value,
+			  		Period_3: document.getElementById("p3d").value,
+			  		Period_4: document.getElementById("p4d").value
+			  	})
+			  	alert("Submission complete.");
+			 }
+			 else {
+			 	alert("Please enter your full name.");
+			 }
 		  }
 		  </script>
 	</body>
