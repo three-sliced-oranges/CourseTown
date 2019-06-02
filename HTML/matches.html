@@ -116,24 +116,29 @@
 						if (offered1[i] != "") {
 				  			offered = offered1[i];
 				  			desired = desired1[i];
+				  			period = " (Period 1)";
 				  		}
 				  		else if (offered2[i] != "") {
 				  			offered = offered2[i];
 				  			desired = desired2[i];
+				  			period = " (Period 2)";
 				  		}
 				  		else if (offered3[i] != "") {
 				  			offered = offered3[i];
 				  			desired = desired3[i];
+				  			period = " (Period 3)";
 				  		}
 				  		else if (offered4[i] != "") {
 				  			offered = offered4[i];
 				  			desired = desired4[i];
+				  			period = " (Period 4)";
 				  		}
 				  		else {
 				  			offered = "N/A";
 				  			desired = "N/A";
+				  			period = "";
 				  		}
-				  		document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[i] + "<br><br>Offered: " + offered + "<br>Desired: " + desired + "</div>";
+				  		document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[i] + period + "<br><br>Offered: " + offered + "<br>Desired: " + desired + "</div>";
 				  	}	
 		  		});
 
@@ -164,6 +169,7 @@
 		  					/*Matches it with one of the offered courses available*/
 		  					if (period == 1) {
 		  						desired = snapshot.child("Desired/Period_1").val();
+		  						period = " (Period 1)";
 			  					var i;
 						  		for (i = 0; i < offered1.length; i++) {
 						  			if (offered1[i] != "" && offered1[i] == desired) {
@@ -171,12 +177,13 @@
 						  			}
 						  		}
 						  		for (i = 0; i < offermatch.length; i++) {
-						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + "<br><br>Offered: " + offered1[offermatch[i]] + "<br>Desired: " + desired1[offermatch[i]] + "</div>";
+						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + period + "<br><br>Offered: " + offered1[offermatch[i]] + "<br>Desired: " + desired1[offermatch[i]] + "</div>";
 						  		}
 					  		}
 
 					  		else if (period == 2) {
 					  			desired = snapshot.child("Desired/Period_2").val();
+					  			period = " (Period 2)";
 			  					var i;
 						  		for (i = 0; i < offered2.length; i++) {
 						  			if (offered2[i] != "" && offered2[i] == desired ) {
@@ -184,12 +191,13 @@
 						  			}
 						  		}
 						  		for (i = 0; i < offermatch.length; i++) {
-						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + "<br><br>Offered: " + offered2[offermatch[i]] + "<br>Desired: " + desired2[offermatch[i]] + "</div>";
+						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + period + "<br><br>Offered: " + offered2[offermatch[i]] + "<br>Desired: " + desired2[offermatch[i]] + "</div>";
 						  		}
 					  		}
 
 					  		else if (period == 3) {
 					  			desired = snapshot.child("Desired/Period_3").val();
+					  			period = " (Period 3)";
 			  					var i;
 						  		for (i = 0; i < offered3.length; i++) {
 						  			if (offered3[i] != "" && offered3[i] == desired) {
@@ -197,12 +205,13 @@
 						  			}
 						  		}
 						  		for (i = 0; i < offermatch.length; i++) {
-						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + "<br><br>Offered: " + offered3[offermatch[i]] + "<br>Desired: " + desired3[offermatch[i]] + "</div>";
+						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + period + "<br><br>Offered: " + offered3[offermatch[i]] + "<br>Desired: " + desired3[offermatch[i]] + "</div>";
 						  		}
 					  		}
 
 					  		else if (period == 4) {
 					  			desired = snapshot.child("Desired/Period_4").val();
+					  			period = " (Period 4)";
 			  					var i;
 						  		for (i = 0; i < offered4.length; i++) {
 						  			if (offered4[i] != "" && offered4[i] == desired) {
@@ -210,7 +219,7 @@
 						  			}
 						  		}
 						  		for (i = 0; i < offermatch.length; i++) {
-						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + "<br><br>Offered: " + offered4[offermatch[i]] + "<br>Desired: " + desired4[offermatch[i]] + "</div>";
+						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + period + "<br><br>Offered: " + offered4[offermatch[i]] + "<br>Desired: " + desired4[offermatch[i]] + "</div>";
 						  		}  		
 					  		}
 
