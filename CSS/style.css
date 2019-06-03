@@ -29,8 +29,9 @@ a {
 }
 
 #special {
-	font-family: Brushstroke, fantasy;
-	font-size: 30px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 40px;
+	padding-top: 460px;
 }
 
 table, th, td{
@@ -61,4 +62,14 @@ tbody {
     padding: 25px;
     font-size: 20px;
     text-align: center;
+}
+
+#period {
+	color: #ff904c;
+}
+
+#periodbg {
+	background-color: white;
+	border-color: #ff904c;
+	border-width: 8px;
 }
