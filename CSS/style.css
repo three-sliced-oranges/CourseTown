@@ -67,6 +67,11 @@ tbody {
 	color: #ff573d;
 }
 /*Explore page tables*/
+#courseCodeTable {
+    border-width: 5px;
+    border-color: #042963;
+}
+
 #period {
     color: #042963;
 }
@@ -77,24 +82,16 @@ tbody {
     border-width: 5px;
 }
 
-#courseCodeTable {
-    border-width: 5px;
-    border-color: #042963;
-}
-
-#courseCode {
+#courseCodeTable h3{
     color: white;
-}
+ }
 
 #courseCodebg {
     background-color: #042963;
-    border-color: #042963;
-    border-width: 5px;
 }
 
 #courses {
     border: none;
-
     font-weight: bold;
 }
 
@@ -112,8 +109,8 @@ tbody {
     color: white;
     border: 3px solid;
     border-color: #81d1ce;
-    padding: 25px;
-    font-size: 20px;
+    padding: 22px;
+    font-size: 23px;
     text-align: center;
 }
 
@@ -123,21 +120,20 @@ tbody {
 }
 
 /*Table on matches page*/
+#matchesTable th {
+    color:white;
+    background-color: #6bd6d2;
+    border-width: 3px;
+    border-color: #01a8a2;
+
+}
+
 #matchesTable td {
     border-width: 3px;
     border-color: #01a8a2;
 }
 
-#matchesHeading {
-    color: white;
-}
-
-#matchesBg {
-    border-width: 3px;
-    border-color: #01a8a2;
-    background-color: #6bd6d2;
-}
-
+/*Orange image for no match*/
 #sadOrange {
     
     height: 100px;
@@ -145,6 +141,7 @@ tbody {
     vertical-align: middle;
 
 }
+
 #cool {
     color: #fc6c05;
     font-family: "Palatino Linotype";

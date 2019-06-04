@@ -28,10 +28,9 @@
 					<th><h1>Desired</h1></th>
 				</tr>
 				<tr align = "center">
-					<td rowspan="2"> 
+					<td> 
 						<form> 
-							<p> Full Name: <input type="text" size="15" id = "name"> </p>
-							<button onclick="remove()">Delete User</button>
+							<p> Full Name: <input type="text" size="15" id ="name"> </p>	
 						</form>
 						
 					</td>
@@ -64,6 +63,9 @@
 				</tr>
 				<tr align = "center">
 					<td>
+						<button onclick="remove()">Delete Account</button>
+					</td>
+					<td>
 						<br>
 						<button onclick="submitSchedule()">Submit</button>
 						<p> Please fill in according to your day 1 schedule. </p>
@@ -71,7 +73,7 @@
 					<td colspan = "2">
 						<br>
 						<button onclick="submitOffer()">Submit</button>
-						<p> You must offer and desire a course for the same period. </p>
+						<p> You must offer and desire one course for the same period. </p>
 					</td>
 				</tr>
 			</table> 	
@@ -100,11 +102,11 @@
 			  		Period_3: document.getElementById("p3s").value,
 			  		Period_4: document.getElementById("p4s").value
 			  	})
-			  	alert("Submission complete.");
+			  		alert("Submission complete.");
 				}
 				else {
-			 	alert("Please enter your full name.");
-			 }	
+			 		alert("Please enter your full name.");
+			 	}
 			}
 
 			//Function that collects data on student's offered and desired course
@@ -124,24 +126,25 @@
 			  		Period_3: document.getElementById("p3d").value,
 			  		Period_4: document.getElementById("p4d").value
 			  	})
-			  	alert("Submission complete.");
-			 }
-			 else {
-			 	alert("Please enter your full name.");
-			 }
+			  		alert("Submission complete.");
+				}
+				else {
+					alert("Please enter your full name.");
+			 	}
+			}
 
 			//Function that accesses location of the student's name in firebase and removes them from the database 
 			function remove() {
-				var name = document.getElementById("name").value;
+				var name = document.getElementById("name").value; 
 				if (name != "") {
-			  	firebase.database().ref("Students/" + name).remove();
-				alert("User has been deleted.");
+		  			firebase.database().ref().child("Students/" + name).remove();
+					alert("User has been deleted.");
 				}
 				else {
 					alert("Please enter your full name.");
 				}
 			}
-		  }
+
 		  </script>
 	</body>
 </html>
