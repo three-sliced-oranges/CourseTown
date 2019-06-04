@@ -50,10 +50,9 @@ tbody {
 .grid-container {
     display: grid;
     grid-template-columns: 382px 382px 382px;
-    padding-top: 50px;
-    padding-left: 45px;
     grid-column-gap: 50px;
     grid-row-gap: 50px;
+    justify-content: space-evenly;
 }
 
 .grid-item {
