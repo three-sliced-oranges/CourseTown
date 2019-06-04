@@ -93,7 +93,7 @@
 		  	var name = document.getElementById("name").value;
 		  	if (name != "") {
 			  	firebase.database().ref("Students/" + name).remove();
-			  	alert("User has been deleted.");
+				alert("User has been deleted.");
 		  	}
 		  	else {
 		  		alert("Please enter your full name.");
