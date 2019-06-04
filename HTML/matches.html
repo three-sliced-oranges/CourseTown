@@ -45,9 +45,10 @@
 			</table> 
 			<p id=nomatch> </p>
 		</div>
-		
 		<div id = "explore" class="grid-container">
 		</div>
+		
+		
 
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
@@ -111,6 +112,7 @@
 
 		  			var i;
 					for (i = 0; i < students.length; i++) {
+						noOffering = false;
 						if (offered1[i] != "") {
 				  			offered = offered1[i];
 				  			desired = desired1[i];
@@ -132,11 +134,11 @@
 				  			period = " (Period 4)";
 				  		}
 				  		else {
-				  			offered = "N/A";
-				  			desired = "N/A";
-				  			period = "";
+				  			noOffering = true;
 				  		}
-				  		document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[i] + period + "<br><br>Offered: " + offered + "<br>Desired: " + desired + "</div>";
+				  		if (noOffering == false) {
+				  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[i] + period + "<br><br>Offered: " + offered + "<br>Desired: " + desired + "</div>";
+				  		}
 				  	}	
 		  		});
 
