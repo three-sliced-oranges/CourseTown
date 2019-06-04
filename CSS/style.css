@@ -47,7 +47,11 @@ tbody {
 
 /*About page*/
 #about {
-    border: 1px white;
+    border-bottom-color: #042963;
+    border-bottom-width: 5px;
+    border-top-color: white;
+    border-right-color: white;
+    border-left-color: white;
 }
 
 /*Explore page tables*/
@@ -124,9 +128,16 @@ tbody {
 
 #cool {
     color: #fc6c05;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+    font-family: "Palatino Linotype";
+    font-size: 50px;
 }
 
 #cool2 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
 }
+
+#cool3 {
+    color: #042963;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
