@@ -52,27 +52,28 @@ tbody {
 
 /*Explore page tables*/
 #period {
-    color: #ff904c;
+    color: #00cee5;
 }
 
 #periodbg {
-    background-color: white;
-    border-color: #ff904c;
+    background-color: #cef4ff;
+    border-color: #00cee5;
     border-width: 5px;
 }
 
 #courseCodeTable {
     border-width: 5px;
-    border-color: #ff904c;
-}
-#courseCodebg {
-    background-color: #ff904c;
-    border-color: #ff904c;
-    border-width: 5px;
+    border-color: #00cee5;
 }
 
 #courseCode {
     color: white;
+}
+
+#courseCodebg {
+    background-color: #00cee5;
+    border-color: #00cee5;
+    border-width: 5px;
 }
 
 #courses {
@@ -91,8 +92,10 @@ tbody {
 }
 
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid black;
+    background-color: #81d1ce;
+    color: white;
+    border: 3px solid;
+    border-color: #81d1ce;
     padding: 25px;
     font-size: 20px;
     text-align: center;
@@ -101,5 +104,20 @@ tbody {
 /*Description for no match*/
 #nomatch {
     font-size: 50px;
+}
 
+/*Table on matches page*/
+#matchesTable td {
+    border-width: 3px;
+    border-color: #01a8a2;
+}
+
+#matchesHeading {
+    color: white;
+}
+
+#matchesBg {
+    border-width: 3px;
+    border-color: #01a8a2;
+    background-color: #6bd6d2;
 }
