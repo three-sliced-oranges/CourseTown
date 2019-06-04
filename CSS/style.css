@@ -28,49 +28,37 @@ a {
 	font-size: 20px;
 }
 
-#special {
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 40px;
-	padding-top: 460px;
-}
-
+/*General table*/
 table, th, td{
-	border: 1px solid black;
-	border-collapse: collapse;
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 tbody {
     font-size: 18px;
 }
-#nomatch {
-    font-size: 50px;
 
+/*Quotation on homepage*/
+#special {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 40px;
+    padding-top: 460px;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 382px 382px 382px;
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
-    justify-content: space-evenly;
+/*About page*/
+#about {
+    border: 1px white;
 }
 
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid black;
-    padding: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
+/*Explore page tables*/
 #period {
-	color: #ff904c;
+    color: #ff904c;
 }
 
 #periodbg {
-	background-color: white;
-	border-color: #ff904c;
-	border-width: 5px;
+    background-color: white;
+    border-color: #ff904c;
+    border-width: 5px;
 }
 
 #courseCodeTable {
@@ -93,6 +81,25 @@ tbody {
     font-weight: bold;
 }
 
-#about {
-    border: 1px white;
+/*Offerings layout on matches page*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 382px 382px 382px;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    justify-content: space-evenly;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    padding: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/*Description for no match*/
+#nomatch {
+    font-size: 50px;
+
 }
