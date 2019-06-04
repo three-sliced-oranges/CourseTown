@@ -53,21 +53,33 @@ tbody {
     border-right-color: white;
     border-left-color: white;
 }
+/*My Profile page table*/
+#profileTable th {
+	color: white;
+	border-color: #ff492d;
+	border-width: 4px;
+	background-color: #ff573d;
+}
 
+#profileTable td {
+	border-color: #ff492d;
+	border-width: 4px;
+	color: #ff573d;
+}
 /*Explore page tables*/
 #period {
-    color: #00cee5;
+    color: #042963;
 }
 
 #periodbg {
-    background-color: #cef4ff;
-    border-color: #00cee5;
+    background-color: #c4dbff;
+    border-color: #042963;
     border-width: 5px;
 }
 
 #courseCodeTable {
     border-width: 5px;
-    border-color: #00cee5;
+    border-color: #042963;
 }
 
 #courseCode {
@@ -75,21 +87,21 @@ tbody {
 }
 
 #courseCodebg {
-    background-color: #00cee5;
-    border-color: #00cee5;
+    background-color: #042963;
+    border-color: #042963;
     border-width: 5px;
 }
 
 #courses {
     border: none;
-    color: gray;
+
     font-weight: bold;
 }
 
 /*Offerings layout on matches page*/
 .grid-container {
     display: grid;
-    grid-template-columns: 382px 382px 382px;
+    grid-template-columns: 350px 350px 350px;
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     justify-content: space-evenly;
