@@ -121,3 +121,12 @@ tbody {
     border-color: #01a8a2;
     background-color: #6bd6d2;
 }
+
+#cool {
+    color: #fc6c05;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+#cool2 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
