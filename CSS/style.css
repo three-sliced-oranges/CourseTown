@@ -70,7 +70,27 @@ tbody {
 #periodbg {
 	background-color: white;
 	border-color: #ff904c;
-	border-width: 8px;
+	border-width: 5px;
+}
+
+#courseCodeTable {
+    border-width: 5px;
+    border-color: #ff904c;
+}
+#courseCodebg {
+    background-color: #ff904c;
+    border-color: #ff904c;
+    border-width: 5px;
+}
+
+#courseCode {
+    color: white;
+}
+
+#courses {
+    border: none;
+    color: gray;
+    font-weight: bold;
 }
 
 #about {

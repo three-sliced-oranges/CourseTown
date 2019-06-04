@@ -15,7 +15,7 @@
 		<div align="center">
 			<br>
 			<br>
-			<table id="explore" width=800>
+			<table id="courseCodeTable" width=800>
 				<tbody id="Period1">
 					<tr id="row1">
 					</tr>
@@ -23,7 +23,7 @@
 			</table>
 			<br>
 			<br>
-			<table id="explore" width=800>
+			<table id="courseCodeTable" width=800>
 				<tbody id="Period2">
 					<tr id="row2">
 					</tr>
@@ -31,7 +31,7 @@
 			</table>
 			<br>
 			<br>
-			<table id="explore" width=800>
+			<table id="courseCodeTable" width=800>
 				<tbody id="Period3">
 					<tr id="row3">
 					</tr>
@@ -39,7 +39,7 @@
 			</table>
 			<br>
 			<br>
-			<table id="explore" width=800>
+			<table id="courseCodeTable" width=800>
 				<tbody id="Period4">
 					<tr id="row4">
 					</tr>
@@ -100,32 +100,32 @@
 			  		for (i = 0; i < period1.length; i++) {
 			  			var rows = i + 2;
 			  			document.getElementById("row1").innerHTML = "<td id=\"periodbg\" width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1 id=\"period\">Period 1</h1></td>";
-			  			document.getElementById("row1").innerHTML += "<td align=\"center\"><h3>Course Code</h3></td>";
-			  			document.getElementById("Period1").innerHTML += "<tr><td align=\"center\">" + period1[i] + "</td></tr>";
+			  			document.getElementById("row1").innerHTML += "<td id=\"courseCodebg\" align=\"center\"><h3 id=\"courseCode\">Course Code</h3></td>";
+			  			document.getElementById("Period1").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period1[i] + "</td></tr>";
 			  		}
 
 			  		var i;
 			  		for (i = 0; i < period2.length; i++) {
 			  			var rows = i + 2;
 			  			document.getElementById("row2").innerHTML = "<td id=\"periodbg\" width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1 id=\"period\">Period 2</h1></td>";
-			  			document.getElementById("row2").innerHTML += "<td align=\"center\"><h3>Course Code</h3></td>";
-			  			document.getElementById("Period2").innerHTML += "<tr><td align=\"center\">" + period2[i] + "</td></tr>";
+			  			document.getElementById("row2").innerHTML += "<td id=\"courseCodebg\" align=\"center\"><h3 id=\"courseCode\">Course Code</h3></td>";
+			  			document.getElementById("Period2").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period2[i] + "</td></tr>";
 			  		}
 
 			  		var i;
 			  		for (i = 0; i < period3.length; i++) {
 			  			var rows = i + 2;
 			  			document.getElementById("row3").innerHTML = "<td id=\"periodbg\" width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1 id=\"period\">Period 3</h1></td>";
-			  			document.getElementById("row3").innerHTML += "<td align=\"center\"><h3>Course Code</h3></td>";
-			  			document.getElementById("Period3").innerHTML += "<tr><td align=\"center\">" + period3[i] + "</td></tr>";
+			  			document.getElementById("row3").innerHTML += "<td id=\"courseCodebg\" align=\"center\"><h3 id=\"courseCode\">Course Code</h3></td>";
+			  			document.getElementById("Period3").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period3[i] + "</td></tr>";
 			  		}
 
 			  		var i;
 			  		for (i = 0; i < period4.length; i++) {
 			  			var rows = i + 2;
 			  			document.getElementById("row4").innerHTML = "<td id=\"periodbg\" width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1 id=\"period\">Period 4</h1></td>";
-			  			document.getElementById("row4").innerHTML += "<td align=\"center\"><h3>Course Code</h3></td>";
-			  			document.getElementById("Period4").innerHTML += "<tr><td align=\"center\">" + period4[i] + "</td></tr>";
+			  			document.getElementById("row4").innerHTML += "<td  id=\"courseCodebg\" align=\"center\"><h3 id=\"courseCode\">Course Code</h3></td>";
+			  			document.getElementById("Period4").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period4[i] + "</td></tr>";
 			  		}
 		  		});
 		</script>
