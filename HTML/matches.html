@@ -163,8 +163,6 @@
 		  		var ref = firebase.database().ref("Students/" + name);
 		  			ref.once('value')
 		  				.then(function(snapshot) {
-		  					
-		  					desired = snapshot.child("Desired/Period_1").val();
 		 					offermatch = [];
 		  					/*Matches it with one of the offered courses available*/
 		  					if (period == 1) {
