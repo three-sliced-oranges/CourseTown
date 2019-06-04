@@ -70,15 +70,16 @@
 		  		.then(function(snapshot) {
 		  			snapshot.forEach(function(childSnapshot) {
 
-		  				/*Collecting student names*/
+		  				//Collecs student names
 		  				var name = childSnapshot.key;
 		  				
-		  				/*Collecting offered and desired courses based on period*/
+		  				//Collects offered and desired courses based on period
 		  				var p1 = snapshot.child(name + "/Schedule/Period_1").val();
 		  				var p2 = snapshot.child(name + "/Schedule/Period_2").val();
 		  				var p3 = snapshot.child(name + "/Schedule/Period_3").val();
 		  				var p4 = snapshot.child(name + "/Schedule/Period_4").val();
 		  				
+		  				//Checks if period is not a study period and pushes it to its respective list
 		  				if (p1 != "STUDY" && period1.includes(p1) == false) {
 		  					period1.push(p1);
 		  				}
@@ -96,6 +97,7 @@
 		  				}
 		  			});	
 
+		  			//For loop that goes through all of the courses available for period 1 and adds it to the table created in html
 		  			var i;
 			  		for (i = 0; i < period1.length; i++) {
 			  			var rows = i + 2;
@@ -104,6 +106,7 @@
 			  			document.getElementById("Period1").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period1[i] + "</td></tr>";
 			  		}
 
+			  		//Same code as above except for period 2 table 
 			  		var i;
 			  		for (i = 0; i < period2.length; i++) {
 			  			var rows = i + 2;
@@ -112,6 +115,7 @@
 			  			document.getElementById("Period2").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period2[i] + "</td></tr>";
 			  		}
 
+			  		//Same code as above except for period 3 table 
 			  		var i;
 			  		for (i = 0; i < period3.length; i++) {
 			  			var rows = i + 2;
@@ -120,6 +124,7 @@
 			  			document.getElementById("Period3").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period3[i] + "</td></tr>";
 			  		}
 
+			  		//Same code as above except for period 4 table 
 			  		var i;
 			  		for (i = 0; i < period4.length; i++) {
 			  			var rows = i + 2;

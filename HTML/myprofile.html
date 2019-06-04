@@ -78,57 +78,48 @@
 		</div>
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
-		  // Initialize Firebase
-		  var config = {
-		    apiKey: "AIzaSyAt_-_1I9ISW4PmF1DgW_03wO9PLdJ10uE",
-		    authDomain: "coursetown-cfe36.firebaseapp.com",
-		    databaseURL: "https://coursetown-cfe36.firebaseio.com",
-		    projectId: "coursetown-cfe36",
-		    storageBucket: "coursetown-cfe36.appspot.com",
-		    messagingSenderId: "141311531998"
-		  };
-		  firebase.initializeApp(config);
+			// Initialize Firebase
+			var config = {
+			apiKey: "AIzaSyAt_-_1I9ISW4PmF1DgW_03wO9PLdJ10uE",
+			authDomain: "coursetown-cfe36.firebaseapp.com",
+			databaseURL: "https://coursetown-cfe36.firebaseio.com",
+			projectId: "coursetown-cfe36",
+			storageBucket: "coursetown-cfe36.appspot.com",
+			messagingSenderId: "141311531998"
+			};
+			firebase.initializeApp(config);
 
-		  function remove() {
-		  	var name = document.getElementById("name").value;
-		  	if (name != "") {
-			  	firebase.database().ref("Students/" + name).remove();
-				alert("User has been deleted.");
-		  	}
-		  	else {
-		  		alert("Please enter your full name.");
-		  	}
-		  }
-
-		  function submitSchedule() {
-		  	var name = document.getElementById("name").value;
-		  	var usersRef = firebase.database().ref("Students/" + name);
-		  	if (name != "") {
-			  	usersRef.child("Schedule").set({
-			  		Period_1: document.getElementById("p1s").value,
+			//Function that collects data on student's timetable 
+			function submitSchedule() {
+				var name = document.getElementById("name").value;            
+				var usersRef = firebase.database().ref("Students/" + name);  //Uses name input to create a new child under Students or travels to this location in database if editing schedule 
+				if (name != "") {
+			  	usersRef.child("Schedule").set({                         	//Creates a new child called Scheudle or travels to this location in database if editing schedule 
+			  		Period_1: document.getElementById("p1s").value,     	//Values for each period are set in the database within Schedule based on user's inputs
 			  		Period_2: document.getElementById("p2s").value,
 			  		Period_3: document.getElementById("p3s").value,
 			  		Period_4: document.getElementById("p4s").value
 			  	})
 			  	alert("Submission complete.");
-		  	}
-		  	else {
+				}
+				else {
 			 	alert("Please enter your full name.");
 			 }	
-		  }
+			}
 
-		  function submitOffer() {
-		  	var name = document.getElementById("name").value;
-		  	var usersRef = firebase.database().ref("Students/" + name);
-		  	if (name != "") {
-			  	usersRef.child("Offered").set({
-			  		Period_1: document.getElementById("p1o").value,
+			//Function that collects data on student's offered and desired course
+			function submitOffer() {
+				var name = document.getElementById("name").value;
+				var usersRef = firebase.database().ref("Students/" + name);
+				if (name != "") {
+			  	usersRef.child("Offered").set({                           //Creates a new child called Offered or travels to this location in database if editing offered course
+			  		Period_1: document.getElementById("p1o").value,       //Values for each offered course are set within Offered based on user's inputs for each period 
 			  		Period_2: document.getElementById("p2o").value,
 			  		Period_3: document.getElementById("p3o").value,
 			  		Period_4: document.getElementById("p4o").value
 			  	})
-			  	usersRef.child("Desired").set({
-			  		Period_1: document.getElementById("p1d").value,
+			  	usersRef.child("Desired").set({                           //Creates a new child called Offered or travels to this location in database if editing offered course
+			  		Period_1: document.getElementById("p1d").value,       //Values for each desired course are set within Desired based on user's inputs for each period 
 			  		Period_2: document.getElementById("p2d").value,
 			  		Period_3: document.getElementById("p3d").value,
 			  		Period_4: document.getElementById("p4d").value
@@ -138,6 +129,18 @@
 			 else {
 			 	alert("Please enter your full name.");
 			 }
+
+			//Function that accesses location of the student's name in firebase and removes them from the database 
+			function remove() {
+				var name = document.getElementById("name").value;
+				if (name != "") {
+			  	firebase.database().ref("Students/" + name).remove();
+				alert("User has been deleted.");
+				}
+				else {
+					alert("Please enter your full name.");
+				}
+			}
 		  }
 		  </script>
 	</body>

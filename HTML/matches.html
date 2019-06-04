@@ -81,10 +81,10 @@
 		  		.then(function(snapshot) {
 		  			snapshot.forEach(function(childSnapshot) {
 
-		  				/*Collecting student names*/
+		  				//Collects each student's name
 		  				var name = childSnapshot.key;
 		  				
-		  				/*Collecting offered and desired courses based on period*/
+		  				//Collects offered and desired courses based on period
 		  				var p1o = snapshot.child(name + "/Offered/Period_1").val();
 		  				var p2o = snapshot.child(name + "/Offered/Period_2").val();
 		  				var p3o = snapshot.child(name + "/Offered/Period_3").val();
@@ -96,7 +96,7 @@
 		  				var p3d = snapshot.child(name + "/Desired/Period_3").val();
 		  				var p4d = snapshot.child(name + "/Desired/Period_4").val();
 		  				
-		  				/*Add values to their list*/
+		  				/*Add values to their respective list*/
 		  				students.push(name);
 
 		  				offered1.push(p1o);
@@ -110,6 +110,7 @@
 		  				desired4.push(p4d);
 		  			});
 
+		  			//A for loop that goes through each of the student's offers, matches it with their desired course, and displays this in a grid 
 		  			var i;
 					for (i = 0; i < students.length; i++) {
 						noOffering = false;
@@ -144,11 +145,13 @@
 
 		  	function match() {
 
+		  		//Assigned empty strings to avoid displaying no matches message and total offerings at the same time
 		  		document.getElementById("explore").innerHTML = "";
 		  		document.getElementById("nomatch").innerHTML = "";
+
 		  		var name = document.getElementById("name").value;
 
-		  		/*Checks to see which period was selected*/
+		  		//Checks to see which period was selected
 		  		if (document.getElementById("p1").checked == true) {
 		  			var period = 1;
 		  		} else if (document.getElementById("p2").checked == true) {
@@ -159,26 +162,32 @@
 		  			var period = 4;
 		  		}
 
-		  		/*Finds user's desired course*/
+		  		//Accesses firebase from location of student's name
 		  		var ref = firebase.database().ref("Students/" + name);
 		  			ref.once('value')
 		  				.then(function(snapshot) {
 		 					offermatch = [];
-		  					/*Matches it with one of the offered courses available*/
+
+		  					//Finds student's desired course 
 		  					if (period == 1) {
 		  						desired = snapshot.child("Desired/Period_1").val();
 		  						period = " (Period 1)";
+
+		  						//For loop that searces through list of offerings for period 1 and pushes offers that match to a new list 
 			  					var i;
 						  		for (i = 0; i < offered1.length; i++) {
 						  			if (offered1[i] != "" && offered1[i] == desired) {
 						  				offermatch.push(i);
 						  			}
 						  		}
+
+						  		//For loop that goes through list of total offers that match and displays all offers available for user 
 						  		for (i = 0; i < offermatch.length; i++) {
 						  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[offermatch[i]] + period + "<br><br>Offered: " + offered1[offermatch[i]] + "<br>Desired: " + desired1[offermatch[i]] + "</div>";
 						  		}
 					  		}
 
+					  		//Same code as above except for period 2 matching 
 					  		else if (period == 2) {
 					  			desired = snapshot.child("Desired/Period_2").val();
 					  			period = " (Period 2)";
@@ -193,6 +202,7 @@
 						  		}
 					  		}
 
+					  		//Same code as above except for period 3 matching 
 					  		else if (period == 3) {
 					  			desired = snapshot.child("Desired/Period_3").val();
 					  			period = " (Period 3)";
@@ -207,6 +217,7 @@
 						  		}
 					  		}
 
+					  		//Same code as above except for period 4 matching 
 					  		else if (period == 4) {
 					  			desired = snapshot.child("Desired/Period_4").val();
 					  			period = " (Period 4)";
@@ -221,10 +232,10 @@
 						  		}  		
 					  		}
 
+					  		//Displays message for when no matches could be found 
 					  		if (offermatch.length == 0) {
 					  			document.getElementById("nomatch").innerHTML = "Sorry, no matches were found. ☹️";
-					  		}
-					  		
+					  		}	
 		  				});	
 		  	}
 		  </script>	  	
