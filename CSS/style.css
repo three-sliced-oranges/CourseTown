@@ -135,9 +135,9 @@ tbody {
 
 /*Orange image for no match*/
 #sadOrange {
-    
-    height: 100px;
-    width: 100px;
+    height: 350px;
+    width: 350px;
+    margin-right: 50px;
     vertical-align: middle;
 
 }
