@@ -73,3 +73,7 @@ tbody {
 	border-color: #ff904c;
 	border-width: 8px;
 }
+
+#about {
+    border: 1px white;
+}
