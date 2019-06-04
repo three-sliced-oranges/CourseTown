@@ -15,7 +15,7 @@
 		<br>
 		<br>
 		<br>
-		<div id="matches" align="center">
+		<div align="center">
 			<table id="matchesTable" width =1250>
 				<col width = 385>
 				<col width = 485>
@@ -43,6 +43,9 @@
 					</td>
 				</tr>
 			</table> 
+		</div>
+
+		<div id="noMatchMessage" align="center">
 			<p id=nomatch> </p>
 		</div>
 
@@ -147,7 +150,7 @@
 
 		  		//Assigned empty strings to avoid displaying no matches message and total offerings at the same time
 		  		document.getElementById("explore").innerHTML = "";
-		  		document.getElementById("nomatch").innerHTML = "";
+		  		document.getElementById("noMatchMessage").innerHTML = "";
 
 		  		var name = document.getElementById("name").value;
 
@@ -235,7 +238,7 @@
 					  		//Displays message for when no matches could be found 
 					  		if (offermatch.length == 0) {
 
-					  			document.getElementById("matches").innerHTML += "<p id=\"nomatch\"> <img src=\"../IMAGES/sadorange.png\" id=\"sadOrange\">Sorry, no matches were found.</p>";
+					  			document.getElementById("noMatchMessage").innerHTML += "<p id=\"nomatch\">Sorry, no matches were found.<img src=\"../IMAGES/sadorange.png\" id=\"sadOrange\"></p>";
 					  			
 					  			
 					  			

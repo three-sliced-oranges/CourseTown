@@ -30,7 +30,7 @@ a {
 
 /*General table*/
 table, th, td{
-    border: 1px solid black;
+    border: solid;
     border-collapse: collapse;
 }
 
@@ -116,7 +116,7 @@ tbody {
 
 /*Description for no match*/
 #nomatch {
-    font-size: 60px;
+    font-size: 55px;
 }
 
 /*Table on matches page*/
@@ -135,8 +135,8 @@ tbody {
 
 /*Orange image for no match*/
 #sadOrange {
-    height: 350px;
-    width: 350px;
+    height: 150px;
+    width: 150px;
     margin-right: 50px;
     vertical-align: middle;
 
