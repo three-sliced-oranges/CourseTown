@@ -15,7 +15,7 @@
 		<br>
 		<br>
 		<br>
-		<div align="center">
+		<div id="matches" align="center">
 			<table id="matchesTable" width =1250>
 				<col width = 385>
 				<col width = 485>
@@ -45,11 +45,11 @@
 			</table> 
 			<p id=nomatch> </p>
 		</div>
+
 		<div id = "explore" class="grid-container">
 		</div>
 		
 		
-
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 		<script>
 
@@ -234,7 +234,12 @@
 
 					  		//Displays message for when no matches could be found 
 					  		if (offermatch.length == 0) {
-					  			document.getElementById("nomatch").innerHTML = "Sorry, no matches were found. ☹️";
+
+					  			document.getElementById("matches").innerHTML += "<p id=\"nomatch\"> Sorry, no matches were found.<img src=\"../IMAGES/sadorange.png\" id=\"sadOrange\"></p>";
+					  			
+					  			
+					  			
+
 					  		}	
 		  				});	
 		  	}
