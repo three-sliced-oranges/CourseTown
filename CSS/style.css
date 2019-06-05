@@ -118,9 +118,9 @@ tbody {
 /*Offerings layout on matches page*/
 .grid-container {
     display: grid;
-    grid-template-columns: 350px 350px 350px;
-    grid-column-gap: 50px;
-    grid-row-gap: 50px;
+    grid-template-columns: 382px 382px 382px;
+    grid-column-gap: 0px;
+    grid-row-gap: 60px;
     justify-content: space-evenly;
 }
 
