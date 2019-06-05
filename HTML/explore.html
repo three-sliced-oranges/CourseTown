@@ -80,7 +80,7 @@
 		  				var p3 = snapshot.child(name + "/Schedule/Period_3").val();
 		  				var p4 = snapshot.child(name + "/Schedule/Period_4").val();
 		  				
-		  				//Checks if period is not a study period and pushes it to its respective list
+		  				//Checks if period is not a study period and pushes it to its respective list (no duplicates)
 		  				if (p1 != "STUDY" && period1.includes(p1) == false) {
 		  					period1.push(p1);
 		  				}

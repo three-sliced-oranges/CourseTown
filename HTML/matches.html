@@ -141,6 +141,8 @@
 				  		else {
 				  			noOffering = true;
 				  		}
+
+				  		//Only shows students with inputted offered/desired courses
 				  		if (noOffering == false) {
 				  			document.getElementById("explore").innerHTML += "<div class=\"grid-item\">" + students[i] + period + "<br><br>Offered: " + offered + "<br>Desired: " + desired + "</div>";
 				  		}
@@ -149,7 +151,7 @@
 
 		  	function match() {
 
-		  		//Assigned empty strings to avoid displaying no matches message and total offerings at the same time
+		  		//Assigned empty strings to avoid displaying no matches message and total offerings at the same time when reclicking button
 		  		document.getElementById("explore").innerHTML = "";
 		  		document.getElementById("noMatchMessage").innerHTML = "";
 
@@ -238,12 +240,7 @@
 
 					  		//Displays message for when no matches could be found 
 					  		if (offermatch.length == 0) {
-
 					  			document.getElementById("noMatchMessage").innerHTML += "<p id=\"nomatch\"><img src=\"../IMAGES/sadorange.png\" id=\"sadOrange\">Sorry, no matches were found.</p>";
-					  			
-					  			
-					  			
-
 					  		}	
 		  				});	
 		  	}
