@@ -64,7 +64,11 @@ tbody {
     border-right-color: white;
     border-left-color: white;
 }
+
 /*My Profile page table*/
+#profileTable {
+    margin-top: 75px;
+}
 #profileTable th {
 	color: white;
 	border-color: #ff492d;
@@ -131,6 +135,10 @@ tbody {
 }
 
 /*Table on matches page*/
+#matchesTable {
+    margin-bottom: 60px;
+}
+
 #matchesTable th {
     color:white;
     background-color: #6bd6d2;
