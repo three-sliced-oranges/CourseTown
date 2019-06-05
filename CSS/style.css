@@ -34,6 +34,12 @@ a {
     height: 55px;
 }
 
+#town {
+    padding-top: 50px;
+    width: 1000px;
+    height: 500px;
+}
+
 /*General table*/
 table, th, td{
     border: solid;
@@ -48,7 +54,7 @@ tbody {
 #special {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-size: 40px;
-    padding-top: 460px;
+    
 }
 
 /*About page*/
