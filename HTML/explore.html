@@ -16,7 +16,7 @@
 		<div align="center">
 			<br>
 			<br>
-			<table id="courseCodeTable" width=800>
+			<table id="explore" width=800>
 				<tbody id="Period1">
 					<tr id="row1">
 					</tr>
@@ -24,7 +24,7 @@
 			</table>
 			<br>
 			<br>
-			<table id="courseCodeTable" width=800>
+			<table id="explore" width=800>
 				<tbody id="Period2">
 					<tr id="row2">
 					</tr>
@@ -32,7 +32,7 @@
 			</table>
 			<br>
 			<br>
-			<table id="courseCodeTable" width=800>
+			<table id="explore" width=800>
 				<tbody id="Period3">
 					<tr id="row3">
 					</tr>
@@ -40,11 +40,10 @@
 			</table>
 			<br>
 			<br>
-			<table id="courseCodeTable" width=800>
+			<table id="explore" width=800>
 				<tbody id="Period4">
 					<tr id="row4">
 					</tr>
-				</tbody>
 			</table>
 		</div>
 		<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
@@ -71,16 +70,15 @@
 		  		.then(function(snapshot) {
 		  			snapshot.forEach(function(childSnapshot) {
 
-		  				//Collecs student names
+		  				/*Collecting student names*/
 		  				var name = childSnapshot.key;
 		  				
-		  				//Collects offered and desired courses based on period
+		  				/*Collecting offered and desired courses based on period*/
 		  				var p1 = snapshot.child(name + "/Schedule/Period_1").val();
 		  				var p2 = snapshot.child(name + "/Schedule/Period_2").val();
 		  				var p3 = snapshot.child(name + "/Schedule/Period_3").val();
 		  				var p4 = snapshot.child(name + "/Schedule/Period_4").val();
 		  				
-		  				//Checks if period is not a study period and pushes it to its respective list (no duplicates)
 		  				if (p1 != "STUDY" && period1.includes(p1) == false) {
 		  					period1.push(p1);
 		  				}
@@ -98,40 +96,36 @@
 		  				}
 		  			});	
 
-		  			//For loop that goes through all of the courses available for period 1 and adds it to the table created in html
 		  			var i;
 			  		for (i = 0; i < period1.length; i++) {
-			  			var rows = i + 2;                    //rowspan is initially 2, and increases by 1 as each course is added 
+			  			var rows = i + 2;
 			  			document.getElementById("row1").innerHTML = "<td id=\"periodbg\" width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1 id=\"period\">Period 1</h1></td>";
-			  			document.getElementById("row1").innerHTML += "<td id=\"courseCodebg\" align=\"center\"><h3 id=\"courseCode\">Course Code</h3></td>";
-			  			document.getElementById("Period1").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period1[i] + "</td></tr>";
+			  			document.getElementById("row1").innerHTML += "<td align=\"center\"><h3>Course Code</h3></td>";
+			  			document.getElementById("Period1").innerHTML += "<tr><td align=\"center\">" + period1[i] + "</td></tr>";
 			  		}
 
-			  		//Same code as above except for period 2 table 
 			  		var i;
 			  		for (i = 0; i < period2.length; i++) {
 			  			var rows = i + 2;
 			  			document.getElementById("row2").innerHTML = "<td id=\"periodbg\" width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1 id=\"period\">Period 2</h1></td>";
-			  			document.getElementById("row2").innerHTML += "<td id=\"courseCodebg\" align=\"center\"><h3 id=\"courseCode\">Course Code</h3></td>";
-			  			document.getElementById("Period2").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period2[i] + "</td></tr>";
+			  			document.getElementById("row2").innerHTML += "<td align=\"center\"><h3>Course Code</h3></td>";
+			  			document.getElementById("Period2").innerHTML += "<tr><td align=\"center\">" + period2[i] + "</td></tr>";
 			  		}
 
-			  		//Same code as above except for period 3 table 
 			  		var i;
 			  		for (i = 0; i < period3.length; i++) {
 			  			var rows = i + 2;
 			  			document.getElementById("row3").innerHTML = "<td id=\"periodbg\" width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1 id=\"period\">Period 3</h1></td>";
-			  			document.getElementById("row3").innerHTML += "<td id=\"courseCodebg\" align=\"center\"><h3 id=\"courseCode\">Course Code</h3></td>";
-			  			document.getElementById("Period3").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period3[i] + "</td></tr>";
+			  			document.getElementById("row3").innerHTML += "<td align=\"center\"><h3>Course Code</h3></td>";
+			  			document.getElementById("Period3").innerHTML += "<tr><td align=\"center\">" + period3[i] + "</td></tr>";
 			  		}
 
-			  		//Same code as above except for period 4 table 
 			  		var i;
 			  		for (i = 0; i < period4.length; i++) {
 			  			var rows = i + 2;
 			  			document.getElementById("row4").innerHTML = "<td id=\"periodbg\" width=\"50%\" align=\"center\" rowspan=\"" + rows + "\"><h1 id=\"period\">Period 4</h1></td>";
-			  			document.getElementById("row4").innerHTML += "<td  id=\"courseCodebg\" align=\"center\"><h3 id=\"courseCode\">Course Code</h3></td>";
-			  			document.getElementById("Period4").innerHTML += "<tr><td id=\"courses\" align=\"center\">" + period4[i] + "</td></tr>";
+			  			document.getElementById("row4").innerHTML += "<td align=\"center\"><h3>Course Code</h3></td>";
+			  			document.getElementById("Period4").innerHTML += "<tr><td align=\"center\">" + period4[i] + "</td></tr>";
 			  		}
 		  		});
 		</script>

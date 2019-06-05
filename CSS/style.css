@@ -131,11 +131,6 @@ tbody {
     text-align: center;
 }
 
-/*Description for no match*/
-#nomatch {
-    font-size: 55px;
-}
-
 /*Table on matches page*/
 #matchesTable th {
     color:white;
@@ -150,13 +145,17 @@ tbody {
     border-color: #01a8a2;
 }
 
+/*Description for no match*/
+#nomatch {
+    font-size: 50px;
+}
+
 /*Orange image for no match*/
 #sadOrange {
-    height: 300px;
-    width: 300px;
+    height: 260px;
+    width: 260px;
     margin-right: 50px;
     vertical-align: middle;
-
 }
 
 #cool {
