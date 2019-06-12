@@ -92,7 +92,7 @@
 				var name = document.getElementById("name").value;            
 				var usersRef = firebase.database().ref("Students/" + name);  //Uses name input to create a new child under Students or travels to this location in database if editing schedule 
 				if (name != "") {
-			  	usersRef.child("Schedule").set({                         	//Creates a new child called Scheudle or travels to this location in database if editing schedule 
+			  	usersRef.child("Schedule").set({                         	//Creates a new child called Schedule or travels to this location in database if editing schedule 
 			  		Period_1: document.getElementById("p1s").value,     	//Values for each period are set in the database within Schedule based on user's inputs
 			  		Period_2: document.getElementById("p2s").value,
 			  		Period_3: document.getElementById("p3s").value,
@@ -116,7 +116,7 @@
 			  		Period_3: document.getElementById("p3o").value,
 			  		Period_4: document.getElementById("p4o").value
 			  	})
-			  	usersRef.child("Desired").set({                           //Creates a new child called Offered or travels to this location in database if editing offered course
+			  	usersRef.child("Desired").set({                           //Creates a new child called Desired or travels to this location in database if editing desired course
 			  		Period_1: document.getElementById("p1d").value,       //Values for each desired course are set within Desired based on user's inputs for each period 
 			  		Period_2: document.getElementById("p2d").value,
 			  		Period_3: document.getElementById("p3d").value,
