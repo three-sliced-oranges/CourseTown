@@ -115,7 +115,7 @@ tbody {
     font-weight: bold;
 }
 
-/*Offerings layout on matches page*/
+/*Offerings grid layout on matches page*/
 .grid-container {
     display: grid;
     grid-template-columns: 382px 382px 382px;
